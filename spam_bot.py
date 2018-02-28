@@ -42,6 +42,7 @@ for line in t.readlines():
 print ('All email sended! ')
 server.quit()
 f.close()
+t.close()
 print(" ***Dedhack*** ")
 
 
