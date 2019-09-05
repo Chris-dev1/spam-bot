@@ -18,10 +18,14 @@ password  = getpass.getpass("Enter your Password:")
 
 if not  email  and not password:
 		print ("You must Login to your Gmail")
+		sys.exit(0)
 else:
-		server.login(email,password)
-		print ("Successfully Signed in")
-
+		try:
+			server.login(email,password)
+			print ("Successfully Signed in")
+		except:
+			print("[X] Error")
+			sys.exit(0)
 		f = open('text', 'r')
 		t = open('victim', 'r')
 		html = f.read()
@@ -43,7 +47,6 @@ print ('All email sended! ')
 server.quit()
 f.close()
 t.close()
-print(" ***Dedhack*** ")
 
 
 
